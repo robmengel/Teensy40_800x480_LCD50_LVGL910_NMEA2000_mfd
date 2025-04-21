@@ -58,7 +58,7 @@ extern lv_obj_t *ui_Screen1_Label15;
 extern lv_obj_t *ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-LV_IMG_DECLARE( ui_img_wind_png);   // assets/wind.png
+LV_IMG_DECLARE( chrislogo);   // assets/wind.png
 LV_IMG_DECLARE( ui_img_red_pointer_png);   // assets/red_pointer.png
 
 // UI INIT

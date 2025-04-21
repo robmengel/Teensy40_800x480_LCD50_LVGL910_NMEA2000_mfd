@@ -1,5 +1,4 @@
 
-
 #ifndef skp_lvgl_h
 #define skp_lvgl_h
 
@@ -8,8 +7,6 @@
 extern "C" {
 #endif
 void skp_lvgl_init(void);
-
-
 
 #ifdef __cplusplus
 } /* extern "C" */

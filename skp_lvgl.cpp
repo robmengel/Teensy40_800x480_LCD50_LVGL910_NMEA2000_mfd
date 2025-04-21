@@ -1,15 +1,15 @@
 
 
 #include <Arduino.h>
-#include "skp_lvgl.h"
 #include <lvgl.h>
+#include "skp_lvgl.h"
 #include <Wire.h>
 
-#include <GSL1680.h>
-#include "SSD1963.h"
+#include <GSL1680.h> //touch driver
+#include "SSD1963.h" //display driver
 
-#include "ui.h"
-#include "ui_helpers.h"
+#include "ui.h" //project specific
+#include "ui_helpers.h" //project specific
 
 #define WAKE 255
 #define INTRPT 20
@@ -93,12 +93,21 @@ static void event_handler(lv_event_t * e)
     }
 }
 
+void my_print( lv_log_level_t level, const char * buf )
+{
+    LV_UNUSED(level);
+    Serial.println(buf);
+    Serial.flush();
+}
+
 void skp_lvgl_init(void)
 {
     Serial.println("lvgl init");
     //ts.begin(WAKE, INTRPT);
     
     lv_init();
+    lv_log_register_print_cb(my_print);
+
     lv_tick_set_cb(millis);
 
     lv_display_t * disp;

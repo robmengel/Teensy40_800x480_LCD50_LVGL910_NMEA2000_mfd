@@ -94,6 +94,7 @@ void setup() {
 
 
   skp_lvgl_init();
+
   Serial.println("800x480 SSD1963 NMEA2000 skpang.co.uk 2023");
 
 }

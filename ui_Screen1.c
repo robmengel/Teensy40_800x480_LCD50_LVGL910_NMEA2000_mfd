@@ -7,17 +7,20 @@
 
 void ui_Screen1_screen_init(void)
 {
+
 ui_Screen1 = lv_obj_create(NULL);
 lv_obj_remove_flag( ui_Screen1, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
+LV_LOG("attempting to load the chris logo");
 ui_Screen1_Image1 = lv_image_create(ui_Screen1);
-lv_image_set_src(ui_Screen1_Image1, &ui_img_wind_png);
+lv_image_set_src(ui_Screen1_Image1, &chrislogo); //ui_img_wind_png
 lv_obj_set_width( ui_Screen1_Image1, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_Screen1_Image1, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_Screen1_Image1, 15 );
 lv_obj_set_y( ui_Screen1_Image1, 15 );
 lv_obj_add_flag( ui_Screen1_Image1, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
 lv_obj_remove_flag( ui_Screen1_Image1, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+LV_LOG("chris logo attempt complete");
 
 ui_Screen1_Image2 = lv_image_create(ui_Screen1);
 lv_image_set_src(ui_Screen1_Image2, &ui_img_red_pointer_png);
@@ -100,7 +103,7 @@ lv_obj_set_height( ui_Screen1_Label2, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_Screen1_Label2, -158 );
 lv_obj_set_y( ui_Screen1_Label2, 135 );
 lv_obj_set_align( ui_Screen1_Label2, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label2,"skpang.co.uk");
+lv_label_set_text(ui_Screen1_Label2,"Chris Craft");
 lv_obj_set_style_text_color(ui_Screen1_Label2, lv_color_hex(0x545353), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_Screen1_Label2, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_Label2, &lv_font_montserrat_14, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -267,5 +270,6 @@ lv_label_set_text(ui_Screen1_Label15,"Engine Speed");
 lv_obj_set_style_text_color(ui_Screen1_Label15, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_Screen1_Label15, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_Label15, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+
 
 }
