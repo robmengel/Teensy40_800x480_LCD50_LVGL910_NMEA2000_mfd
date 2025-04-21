@@ -266,6 +266,17 @@ void EngineDynamicParameters(const tN2kMsg &N2kMsg) {
     }
 }
 
+double totalBurnVolume = 0; //total fuel burned in liters
+double divisionFactor =7200.0;
+void calcTotalBurn(double dataPoint)
+{
+  // https://canboat.github.io/canboat/canboat.html is the source for all this math. For now we assume two data points per second (500ms or 0.5s interval) and data is in L/hr
+  // we know there are 3600 seconds in an hour, or 7200 half seconds in an hour, so whatever our lph is we can simply divide by 7200 for a number to add to our total burn volume
+  totalBurnVolume += (dataPoint/divisionFactor);
+  //for sanity, we will never really see fuel flow below 2.5lph at idle, and its rare to see more than 100lph at WOT for a single engine. for this reason, we can make a safe assumption that doubles on teensy4 will work.
+}
+
+
 void loop()
 {
     lv_timer_handler(); /* let the GUI do its work */

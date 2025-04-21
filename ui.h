@@ -52,6 +52,13 @@ extern lv_obj_t *ui_Screen1_Label12;
 extern lv_obj_t *ui_Screen1_Label13;
 extern lv_obj_t *ui_Screen1_Label14;
 extern lv_obj_t *ui_Screen1_Label15;
+
+//SCREEN: ui_ScreenSplash
+void ui_Screen1_screenSplash_init(void);
+extern lv_obj_t *ui_ScreenSplash;
+extern lv_obj_t *ui_ScreenSplash_Image1;
+
+
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -63,6 +70,7 @@ LV_IMG_DECLARE( ui_img_red_pointer_png);   // assets/red_pointer.png
 
 // UI INIT
 void ui_init(void);
+void endSplash(lv_timer_t * timer);
 
 #ifdef __cplusplus
 } /*extern "C"*/

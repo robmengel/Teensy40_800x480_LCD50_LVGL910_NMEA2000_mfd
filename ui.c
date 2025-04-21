@@ -5,6 +5,7 @@
 
 #include "ui.h"
 #include "ui_helpers.h"
+#include "Arduino.h"
 
 ///////////////////// VARIABLES ////////////////////
 
@@ -35,6 +36,11 @@ lv_obj_t *ui_Screen1_Label12;
 lv_obj_t *ui_Screen1_Label13;
 lv_obj_t *ui_Screen1_Label14;
 lv_obj_t *ui_Screen1_Label15;
+
+//SCREEN: ui_ScreenSplash
+void ui_ScreenSplash_screen_init(void);
+lv_obj_t *ui_ScreenSplash;
+lv_obj_t *ui_ScreenSplash_Image1;
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -58,8 +64,17 @@ void ui_init( void )
 lv_disp_t *dispp = lv_display_get_default();
 lv_theme_t *theme = lv_theme_default_init(dispp, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_RED), false, LV_FONT_DEFAULT);
 lv_disp_set_theme(dispp, theme);
-ui_Screen1_screen_init();
+
+lv_timer_set_repeat_count(lv_timer_create(endSplash, 8000, NULL), 1);
+ui_ScreenSplash_screen_init();
 ui____initial_actions0 = lv_obj_create(NULL);
-lv_disp_load_scr( ui_Screen1);
-System.sleep(8000);
+lv_disp_load_scr( ui_ScreenSplash);
+}
+
+void endSplash(lv_timer_t * timer)
+{
+    LV_LOG("splash ended");
+    ui_Screen1_screen_init();
+    lv_disp_load_scr( ui_Screen1);
+    lv_obj_del( ui_ScreenSplash);
 }
