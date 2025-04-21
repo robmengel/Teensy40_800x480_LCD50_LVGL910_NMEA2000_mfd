@@ -40,8 +40,8 @@ extern lv_obj_t *ui_Screen1_Label2;
 extern lv_obj_t *ui_lbWaterTemp;
 extern lv_obj_t *ui_Screen1_Label6;
 extern lv_obj_t *ui_Screen1_Label7;
-extern lv_obj_t *ui_lbCOG;
-extern lv_obj_t *ui_lbSOG;
+extern lv_obj_t *ui_lbFuelFlow;
+extern lv_obj_t *ui_lbFuelBurned;
 extern lv_obj_t *ui_Screen1_Label8;
 extern lv_obj_t *ui_Screen1_Label9;
 extern lv_obj_t *ui_Screen1_Label10;
@@ -65,8 +65,9 @@ extern lv_obj_t *ui_ScreenSplash_Image1;
 extern lv_obj_t *ui____initial_actions0;
 
 // IMAGES AND IMAGE SETS
-LV_IMG_DECLARE( chrislogo);   // assets/wind.png
-LV_IMG_DECLARE( ui_img_red_pointer_png);   // assets/red_pointer.png
+LV_IMG_DECLARE( chrislogo);
+LV_IMG_DECLARE( chrislogo_small);
+LV_IMG_DECLARE( ui_img_red_pointer_png);
 
 // UI INIT
 void ui_init(void);

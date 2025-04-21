@@ -68,6 +68,7 @@ void setup() {
   //lcd.setColor(0, 0,0);
   //lcd.fillRect(0, 0, 800, 480);
   //lcd.writeRect(0, 0, 800,480,255);
+  /*
   lcd.setColor(255, 255,255);
   for(int i=0;i<480;i++)
 
@@ -79,7 +80,7 @@ void setup() {
   lcd.drawLine(800,0,0,480);
 
   lcd.setColor(255, 0,0);
-  lcd.drawLine(800,240,0,240);
+  lcd.drawLine(800,240,0,240); */
     OutputStream=&Serial;
   // NMEA2000.SetN2kCANReceiveFrameBufSize(50);
   // Do not forward bus messages at all
@@ -140,11 +141,11 @@ void COGSOG(const tN2kMsg &N2kMsg) {
       PrintLabelValWithConversionCheckUnDef("  COG (deg): ",COG,&RadToDeg,true);
       PrintLabelValWithConversionCheckUnDef("  SOG (m/s): ",SOG,0,true);
       
-      sprintf(buff,"%2.0f",RadToDeg(COG));
-      lv_label_set_text(ui_lbCOG,buff);    // Update LCD
+      //sprintf(buff,"%2.0f",RadToDeg(COG));
+      //lv_label_set_text(ui_lbCOG,buff);    // Update LCD
       
-      sprintf(buff,"%2.1f",msToKnots(SOG));
-      lv_label_set_text(ui_lbSOG,buff);    // Update LCD
+      //sprintf(buff,"%2.1f",msToKnots(SOG));
+      //lv_label_set_text(ui_lbSOG,buff);    // Update LCD
     
     } else {
       OutputStream->print("Failed to parse PGN: "); OutputStream->println(N2kMsg.PGN);
@@ -258,8 +259,11 @@ void EngineDynamicParameters(const tN2kMsg &N2kMsg) {
       PrintLabelValWithConversionCheckUnDef("  engine load (%): ",EngineLoad,0,true);
       PrintLabelValWithConversionCheckUnDef("  engine torque (%): ",EngineTorque,0,true);
       
+      calcTotalBurn(FuelRate);
       sprintf(buff,"%2.1f",AltenatorVoltage);
       lv_label_set_text(ui_lbAltVolt, buff);   // LCD
+      sprintf(buff,"%2.1f",FuelRate);
+      lv_label_set_text(ui_lbFuelFlow, buff);   // LCD
 
     } else {
       OutputStream->print("Failed to parse PGN: "); OutputStream->println(N2kMsg.PGN);
@@ -274,6 +278,8 @@ void calcTotalBurn(double dataPoint)
   // we know there are 3600 seconds in an hour, or 7200 half seconds in an hour, so whatever our lph is we can simply divide by 7200 for a number to add to our total burn volume
   totalBurnVolume += (dataPoint/divisionFactor);
   //for sanity, we will never really see fuel flow below 2.5lph at idle, and its rare to see more than 100lph at WOT for a single engine. for this reason, we can make a safe assumption that doubles on teensy4 will work.
+  sprintf(buff,"%2.1f",totalBurnVolume);
+  lv_label_set_text(ui_lbFuelBurned, buff);   // LCD
 }
 
 

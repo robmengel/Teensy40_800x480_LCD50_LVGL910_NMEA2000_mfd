@@ -13,9 +13,9 @@ lv_obj_remove_flag( ui_Screen1, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
 LV_LOG("attempting to load the chris logo");
 ui_Screen1_Image1 = lv_image_create(ui_Screen1);
-lv_image_set_src(ui_Screen1_Image1, &chrislogo); //ui_img_wind_png
-lv_obj_set_width( ui_Screen1_Image1, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Image1, LV_SIZE_CONTENT);   /// 1
+lv_image_set_src(ui_Screen1_Image1, &chrislogo_small); 
+lv_obj_set_width( ui_Screen1_Image1, 292);  /// 1
+lv_obj_set_height( ui_Screen1_Image1, 50);   /// 1
 lv_obj_set_x( ui_Screen1_Image1, 15 );
 lv_obj_set_y( ui_Screen1_Image1, 15 );
 lv_obj_add_flag( ui_Screen1_Image1, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
@@ -140,27 +140,29 @@ lv_obj_set_style_text_color(ui_Screen1_Label7, lv_color_hex(0x000000), LV_PART_M
 lv_obj_set_style_text_opa(ui_Screen1_Label7, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_Label7, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_lbCOG = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_lbCOG, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_lbCOG, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_lbCOG, -213 );
-lv_obj_set_y( ui_lbCOG, 195 );
-lv_obj_set_align( ui_lbCOG, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_lbCOG,"128");
-lv_obj_set_style_text_align(ui_lbCOG, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_decor(ui_lbCOG, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_lbCOG, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
+//FUEL FLOW DATA LABEL
+ui_lbFuelFlow = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_lbFuelFlow, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_lbFuelFlow, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_lbFuelFlow, -235 );
+lv_obj_set_y( ui_lbFuelFlow, 195 );
+lv_obj_set_align( ui_lbFuelFlow, LV_ALIGN_RIGHT_MID );
+lv_label_set_text(ui_lbFuelFlow,"8.8");
+lv_obj_set_style_text_align(ui_lbFuelFlow, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_decor(ui_lbFuelFlow, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_lbFuelFlow, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_lbSOG = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_lbSOG, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_lbSOG, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_lbSOG, -74 );
-lv_obj_set_y( ui_lbSOG, 198 );
-lv_obj_set_align( ui_lbSOG, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_lbSOG,"21.5");
-lv_obj_set_style_text_align(ui_lbSOG, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_decor(ui_lbSOG, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_lbSOG, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
+//FUEL BURN DATA LABEL
+ui_lbFuelBurned = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_lbFuelBurned, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_lbFuelBurned, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_lbFuelBurned, -74 );
+lv_obj_set_y( ui_lbFuelBurned, 198 );
+lv_obj_set_align( ui_lbFuelBurned, LV_ALIGN_RIGHT_MID );
+lv_label_set_text(ui_lbFuelBurned,"12.8");
+lv_obj_set_style_text_align(ui_lbFuelBurned, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_decor(ui_lbFuelBurned, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_lbFuelBurned, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_Screen1_Label8 = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_Screen1_Label8, LV_SIZE_CONTENT);  /// 1
@@ -168,7 +170,7 @@ lv_obj_set_height( ui_Screen1_Label8, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_Screen1_Label8, 141 );
 lv_obj_set_y( ui_Screen1_Label8, 152 );
 lv_obj_set_align( ui_Screen1_Label8, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label8,"COG");
+lv_label_set_text(ui_Screen1_Label8,"Fuel Flow");
 lv_obj_set_style_text_color(ui_Screen1_Label8, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_Screen1_Label8, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_Label8, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -179,7 +181,7 @@ lv_obj_set_height( ui_Screen1_Label9, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_Screen1_Label9, 285 );
 lv_obj_set_y( ui_Screen1_Label9, 152 );
 lv_obj_set_align( ui_Screen1_Label9, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label9,"SOG");
+lv_label_set_text(ui_Screen1_Label9,"Fuel Burn");
 lv_obj_set_style_text_color(ui_Screen1_Label9, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_Screen1_Label9, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_Label9, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -188,19 +190,19 @@ ui_Screen1_Label10 = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_Screen1_Label10, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_Screen1_Label10, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_Screen1_Label10, 199 );
-lv_obj_set_y( ui_Screen1_Label10, 178 );
+lv_obj_set_y( ui_Screen1_Label10, 207 );
 lv_obj_set_align( ui_Screen1_Label10, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label10,"o");
+lv_label_set_text(ui_Screen1_Label10,"GPH");
 lv_obj_set_style_text_align(ui_Screen1_Label10, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_Label10, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_Screen1_Label11 = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_Screen1_Label11, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_Screen1_Label11, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label11, 342 );
+lv_obj_set_x( ui_Screen1_Label11, 365 );
 lv_obj_set_y( ui_Screen1_Label11, 207 );
 lv_obj_set_align( ui_Screen1_Label11, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label11,"kt");
+lv_label_set_text(ui_Screen1_Label11,"Gallons");
 lv_obj_set_style_text_color(ui_Screen1_Label11, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
 lv_obj_set_style_text_opa(ui_Screen1_Label11, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_Label11, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
