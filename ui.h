@@ -58,7 +58,6 @@ void ui_Screen1_screenSplash_init(void);
 extern lv_obj_t *ui_ScreenSplash;
 extern lv_obj_t *ui_ScreenSplash_Image1;
 
-
 // CUSTOM VARIABLES
 
 // EVENTS
@@ -67,11 +66,12 @@ extern lv_obj_t *ui____initial_actions0;
 // IMAGES AND IMAGE SETS
 LV_IMG_DECLARE( chrislogo);
 LV_IMG_DECLARE( chrislogo_small);
-LV_IMG_DECLARE( ui_img_red_pointer_png);
+LV_IMG_DECLARE( BelleIsle);
 
 // UI INIT
 void ui_init(void);
 void endSplash(lv_timer_t * timer);
+void scootImage(lv_timer_t * timer);
 
 #ifdef __cplusplus
 } /*extern "C"*/

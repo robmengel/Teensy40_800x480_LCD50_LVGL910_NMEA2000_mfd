@@ -11,7 +11,6 @@ void ui_Screen1_screen_init(void)
 ui_Screen1 = lv_obj_create(NULL);
 lv_obj_remove_flag( ui_Screen1, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
-LV_LOG("attempting to load the chris logo");
 ui_Screen1_Image1 = lv_image_create(ui_Screen1);
 lv_image_set_src(ui_Screen1_Image1, &chrislogo_small); 
 lv_obj_set_width( ui_Screen1_Image1, 292);  /// 1
@@ -20,18 +19,24 @@ lv_obj_set_x( ui_Screen1_Image1, 15 );
 lv_obj_set_y( ui_Screen1_Image1, 15 );
 lv_obj_add_flag( ui_Screen1_Image1, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
 lv_obj_remove_flag( ui_Screen1_Image1, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
-LV_LOG("chris logo attempt complete");
 
+
+//shitty animation code
+lv_timer_set_repeat_count(lv_timer_create(scootImage, 2000, NULL), 50);
+
+//the big map image
 ui_Screen1_Image2 = lv_image_create(ui_Screen1);
-lv_image_set_src(ui_Screen1_Image2, &ui_img_red_pointer_png);
-lv_obj_set_width( ui_Screen1_Image2, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Image2, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Image2, 224 );
-lv_obj_set_y( ui_Screen1_Image2, 37 );
+lv_image_set_src(ui_Screen1_Image2, &BelleIsle);
+//lv_img_set_zoom(ui_Screen1_Image2, 512);
+lv_obj_set_width( ui_Screen1_Image2, 415);  /// 1
+lv_obj_set_height( ui_Screen1_Image2, 415);   /// 1
+lv_obj_set_x( ui_Screen1_Image2, 0 );
+lv_obj_set_y( ui_Screen1_Image2, 65 );
 lv_obj_add_flag( ui_Screen1_Image2, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
 lv_obj_remove_flag( ui_Screen1_Image2, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
-lv_image_set_pivot(ui_Screen1_Image2,16,202);
-lv_image_set_rotation(ui_Screen1_Image2,2700);
+//lv_img_set_size_mode(ui_Screen1_Image2, LV_IMG_SIZE_MODE_REAL); //this flag only works on lvgl 8, need to checkt he function in lvgl code to figure out what args are valid
+//lv_image_set_pivot(ui_Screen1_Image2,16,202);
+//lv_image_set_rotation(ui_Screen1_Image2,2700);
 
 ui_lbWindDirection = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_lbWindDirection, LV_SIZE_CONTENT);  /// 1
@@ -274,4 +279,22 @@ lv_obj_set_style_text_opa(ui_Screen1_Label15, 255, LV_PART_MAIN| LV_STATE_DEFAUL
 lv_obj_set_style_text_font(ui_Screen1_Label15, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 
+}
+int xcounterthing = 1;
+//actual shitty animation code
+void scootImage(lv_timer_t * timer)
+{
+  xcounterthing--;
+  lv_obj_invalidate(ui_Screen1_Image2);
+  LV_LOG("scooting image");
+  lv_image_set_src(ui_Screen1_Image2, &BelleIsle);
+  //lv_img_set_zoom(ui_Screen1_Image2, 512);
+  lv_obj_set_width( ui_Screen1_Image2, 415 + (xcounterthing * -1));  /// 1
+  lv_obj_set_height( ui_Screen1_Image2, 415);   /// 1
+  lv_obj_set_x( ui_Screen1_Image2, xcounterthing );
+  lv_obj_set_y( ui_Screen1_Image2, 65 );
+  lv_obj_add_flag( ui_Screen1_Image2, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
+  lv_obj_remove_flag( ui_Screen1_Image2, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
+  //lv_img_set_size_mode(ui_Screen1_Image2, LV_IMG_SIZE_MODE_REAL);
+  //lv_obj_set_x( ui_Screen1_Image2, xcounterthing );
 }

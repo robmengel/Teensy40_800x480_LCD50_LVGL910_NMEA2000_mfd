@@ -11,7 +11,6 @@ void ui_ScreenSplash_screen_init(void)
 ui_ScreenSplash = lv_obj_create(NULL);
 lv_obj_remove_flag( ui_ScreenSplash, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
-LV_LOG("attempting to load the chris logo");
 ui_ScreenSplash_Image1 = lv_image_create(ui_ScreenSplash);
 lv_image_set_src(ui_ScreenSplash_Image1, &chrislogo); //ui_img_wind_png
 lv_obj_set_width( ui_ScreenSplash_Image1, LV_SIZE_CONTENT);  /// 1
@@ -20,6 +19,5 @@ lv_obj_set_x( ui_ScreenSplash_Image1, 50 );
 lv_obj_set_y( ui_ScreenSplash_Image1, 180 );
 lv_obj_add_flag( ui_ScreenSplash_Image1, LV_OBJ_FLAG_ADV_HITTEST );   /// Flags
 lv_obj_remove_flag( ui_ScreenSplash_Image1, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
-LV_LOG("chris logo attempt complete");
 
 }
