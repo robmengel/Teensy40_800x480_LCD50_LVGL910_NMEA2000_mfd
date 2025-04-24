@@ -22,7 +22,7 @@ lv_obj_remove_flag( ui_Screen1_Image1, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
 
 //shitty animation code
-lv_timer_set_repeat_count(lv_timer_create(scootImage, 2000, NULL), 50);
+lv_timer_set_repeat_count(lv_timer_create(scootImage, 2000, NULL), 100);
 
 //the big map image
 ui_Screen1_Image2 = lv_image_create(ui_Screen1);
@@ -37,81 +37,6 @@ lv_obj_remove_flag( ui_Screen1_Image2, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 //lv_img_set_size_mode(ui_Screen1_Image2, LV_IMG_SIZE_MODE_REAL); //this flag only works on lvgl 8, need to checkt he function in lvgl code to figure out what args are valid
 //lv_image_set_pivot(ui_Screen1_Image2,16,202);
 //lv_image_set_rotation(ui_Screen1_Image2,2700);
-
-ui_lbWindDirection = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_lbWindDirection, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_lbWindDirection, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_lbWindDirection, -524 );
-lv_obj_set_y( ui_lbWindDirection, -29 );
-lv_obj_set_align( ui_lbWindDirection, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_lbWindDirection,"223");
-lv_obj_set_style_text_align(ui_lbWindDirection, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_decor(ui_lbWindDirection, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_lbWindDirection, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
-
-ui_lbWindSpeed = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_lbWindSpeed, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_lbWindSpeed, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_lbWindSpeed, -515 );
-lv_obj_set_y( ui_lbWindSpeed, 61 );
-lv_obj_set_align( ui_lbWindSpeed, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_lbWindSpeed,"16.8");
-lv_obj_set_style_text_align(ui_lbWindSpeed, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_lbWindSpeed, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
-
-ui_Screen1_Label3 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label3, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label3, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label3, -170 );
-lv_obj_set_y( ui_Screen1_Label3, -62 );
-lv_obj_set_align( ui_Screen1_Label3, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label3,"Direction");
-lv_obj_set_style_text_color(ui_Screen1_Label3, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label3, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label3, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
-
-ui_Screen1_Label1 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label1, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label1, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label1, -114 );
-lv_obj_set_y( ui_Screen1_Label1, -42 );
-lv_obj_set_align( ui_Screen1_Label1, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label1,"o");
-lv_obj_set_style_text_align(ui_Screen1_Label1, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label1, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
-
-ui_Screen1_Label4 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label4, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label4, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label4, -155 );
-lv_obj_set_y( ui_Screen1_Label4, 27 );
-lv_obj_set_align( ui_Screen1_Label4, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label4,"Wind Speed");
-lv_obj_set_style_text_color(ui_Screen1_Label4, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label4, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label4, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
-
-ui_Screen1_Label5 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label5, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label5, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label5, -102 );
-lv_obj_set_y( ui_Screen1_Label5, 68 );
-lv_obj_set_align( ui_Screen1_Label5, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label5,"kt");
-lv_obj_set_style_text_color(ui_Screen1_Label5, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label5, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label5, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
-
-ui_Screen1_Label2 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label2, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label2, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label2, -158 );
-lv_obj_set_y( ui_Screen1_Label2, 135 );
-lv_obj_set_align( ui_Screen1_Label2, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label2,"Chris Craft");
-lv_obj_set_style_text_color(ui_Screen1_Label2, lv_color_hex(0x545353), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label2, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label2, &lv_font_montserrat_14, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_lbWaterTemp = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_lbWaterTemp, LV_SIZE_CONTENT);  /// 1
@@ -234,38 +159,38 @@ lv_obj_set_style_text_align(ui_lbAltVolt, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_
 lv_obj_set_style_text_decor(ui_lbAltVolt, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_lbAltVolt, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label12 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label12, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label12, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label12, 323 );
-lv_obj_set_y( ui_Screen1_Label12, 91 );
-lv_obj_set_align( ui_Screen1_Label12, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label12,"RPM");
-lv_obj_set_style_text_color(ui_Screen1_Label12, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label12, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label12, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelRPM = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelRPM, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelRPM, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelRPM, 323 );
+lv_obj_set_y( ui_Screen1_LabelRPM, 91 );
+lv_obj_set_align( ui_Screen1_LabelRPM, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelRPM,"RPM");
+lv_obj_set_style_text_color(ui_Screen1_LabelRPM, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_Screen1_LabelRPM, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelRPM, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label13 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label13, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label13, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label13, 335 );
-lv_obj_set_y( ui_Screen1_Label13, -21 );
-lv_obj_set_align( ui_Screen1_Label13, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label13,"V");
-lv_obj_set_style_text_color(ui_Screen1_Label13, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label13, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label13, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelVolt_Units = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelVolt_Units, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelVolt_Units, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelVolt_Units, 335 );
+lv_obj_set_y( ui_Screen1_LabelVolt_Units, -21 );
+lv_obj_set_align( ui_Screen1_LabelVolt_Units, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelVolt_Units,"V");
+lv_obj_set_style_text_color(ui_Screen1_LabelVolt_Units, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_Screen1_LabelVolt_Units, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelVolt_Units, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label14 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label14, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label14, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label14, 273 );
-lv_obj_set_y( ui_Screen1_Label14, -74 );
-lv_obj_set_align( ui_Screen1_Label14, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label14,"Alternator Voltage");
-lv_obj_set_style_text_color(ui_Screen1_Label14, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label14, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label14, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelVoltage = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelVoltage, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelVoltage, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelVoltage, 273 );
+lv_obj_set_y( ui_Screen1_LabelVoltage, -74 );
+lv_obj_set_align( ui_Screen1_LabelVoltage, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelVoltage,"Alternator Voltage");
+lv_obj_set_style_text_color(ui_Screen1_LabelVoltage, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_Screen1_LabelVoltage, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelVoltage, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_Screen1_Label15 = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_Screen1_Label15, LV_SIZE_CONTENT);  /// 1

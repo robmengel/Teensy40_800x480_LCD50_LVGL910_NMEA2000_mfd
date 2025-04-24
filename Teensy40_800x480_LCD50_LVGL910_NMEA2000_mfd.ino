@@ -169,15 +169,13 @@ void Wind(const tN2kMsg &N2kMsg) {
       Serial.print(" ");
       knots = msToKnots(WindSpeed);
       sprintf(buff,"%2.1f",knots);
-      lv_label_set_text(ui_lbWindSpeed,buff);    // Update  LCD
    
       WindAngle_degree = RadToDeg(WindAngle);
       Serial.print("Wind direction ");
       Serial.println(WindAngle_degree);
    
       sprintf(buff,"%2.0f",WindAngle_degree);
-      lv_label_set_text(ui_lbWindDirection,buff); 
-      lv_img_set_angle(ui_Screen1_Image2,WindAngle_degree*10);
+      //lv_label_set_text(ui_lbWindDirection,buff); 
    
   
     } else {

@@ -14,13 +14,6 @@ void ui_Screen1_screen_init(void);
 lv_obj_t *ui_Screen1;
 lv_obj_t *ui_Screen1_Image1;
 lv_obj_t *ui_Screen1_Image2;
-lv_obj_t *ui_lbWindDirection;
-lv_obj_t *ui_lbWindSpeed;
-lv_obj_t *ui_Screen1_Label3;
-lv_obj_t *ui_Screen1_Label1;
-lv_obj_t *ui_Screen1_Label4;
-lv_obj_t *ui_Screen1_Label5;
-lv_obj_t *ui_Screen1_Label2;
 lv_obj_t *ui_lbWaterTemp;
 lv_obj_t *ui_Screen1_Label6;
 lv_obj_t *ui_Screen1_Label7;
@@ -32,9 +25,9 @@ lv_obj_t *ui_Screen1_Label10;
 lv_obj_t *ui_Screen1_Label11;
 lv_obj_t *ui_lbEngineRPM;
 lv_obj_t *ui_lbAltVolt;
-lv_obj_t *ui_Screen1_Label12;
-lv_obj_t *ui_Screen1_Label13;
-lv_obj_t *ui_Screen1_Label14;
+lv_obj_t *ui_Screen1_LabelRPM;
+lv_obj_t *ui_Screen1_LabelVolt_Units;
+lv_obj_t *ui_Screen1_LabelVoltage;
 lv_obj_t *ui_Screen1_Label15;
 
 //SCREEN: ui_ScreenSplash
