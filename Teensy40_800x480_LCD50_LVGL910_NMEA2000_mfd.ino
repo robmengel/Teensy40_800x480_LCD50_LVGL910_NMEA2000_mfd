@@ -197,7 +197,7 @@ void OutsideEnvironmental(const tN2kMsg &N2kMsg) {
       temperature = KelvinToC(WaterTemperature);
       sprintf(buff,"%2.1f",temperature);
       
-      lv_label_set_text(ui_lbWaterTemp, buff);   // Update temperature on LCD
+      //lv_label_set_text(ui_lbOilPRessure_value, buff);   // Update temperature on LCD
 
     } else {
       OutputStream->print("Failed to parse PGN: ");  OutputStream->println(N2kMsg.PGN);
@@ -218,7 +218,7 @@ void EngineRapid(const tN2kMsg &N2kMsg) {
       PrintLabelValWithConversionCheckUnDef("  tilt trim: ",EngineTiltTrim,0,true);
 
       sprintf(buff,"%2.0f",EngineSpeed);
-      lv_label_set_text(ui_lbEngineRPM, buff);   // Update LCD
+      lv_label_set_text(ui_lbEngineRPM_value, buff);   // Update LCD
 
     } else {
       OutputStream->print("Failed to parse PGN: "); OutputStream->println(N2kMsg.PGN);
@@ -262,6 +262,11 @@ void EngineDynamicParameters(const tN2kMsg &N2kMsg) {
       lv_label_set_text(ui_lbAltVolt, buff);   // LCD
       sprintf(buff,"%2.1f",FuelRate);
       lv_label_set_text(ui_lbFuelFlow, buff);   // LCD
+      //Engine Oil Pressure (16-bit unsigned integer) This field indicates the oil pressure of the engine in units of 100 Pa.
+      //for an approx result, we divide the valu eby 68.95
+      EngineOilPress /= 68.95;
+      sprintf(buff,"%2.1f",EngineOilPress);
+      lv_label_set_text(ui_lbOilPRessure_value, buff);
 
     } else {
       OutputStream->print("Failed to parse PGN: "); OutputStream->println(N2kMsg.PGN);
@@ -277,7 +282,7 @@ void calcTotalBurn(double dataPoint)
   totalBurnVolume += (dataPoint/divisionFactor);
   //for sanity, we will never really see fuel flow below 2.5lph at idle, and its rare to see more than 100lph at WOT for a single engine. for this reason, we can make a safe assumption that doubles on teensy4 will work.
   sprintf(buff,"%2.1f",totalBurnVolume);
-  lv_label_set_text(ui_lbFuelBurned, buff);   // LCD
+  lv_label_set_text(ui_lbFuelBurned_Value, buff);   // LCD
 }
 
 

@@ -22,7 +22,7 @@ lv_obj_remove_flag( ui_Screen1_Image1, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 
 
 //shitty animation code
-lv_timer_set_repeat_count(lv_timer_create(scootImage, 2000, NULL), 100);
+lv_timer_set_repeat_count(lv_timer_create(scootImage, 800, NULL), 900);
 
 //the big map image
 ui_Screen1_Image2 = lv_image_create(ui_Screen1);
@@ -38,44 +38,44 @@ lv_obj_remove_flag( ui_Screen1_Image2, LV_OBJ_FLAG_SCROLLABLE );    /// Flags
 //lv_image_set_pivot(ui_Screen1_Image2,16,202);
 //lv_image_set_rotation(ui_Screen1_Image2,2700);
 
-ui_lbWaterTemp = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_lbWaterTemp, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_lbWaterTemp, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_lbWaterTemp, -78 );
-lv_obj_set_y( ui_lbWaterTemp, -154 );
-lv_obj_set_align( ui_lbWaterTemp, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_lbWaterTemp,"21.5");
-lv_obj_set_style_text_align(ui_lbWaterTemp, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_decor(ui_lbWaterTemp, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_lbWaterTemp, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_lbOilPRessure_value = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_lbOilPRessure_value, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_lbOilPRessure_value, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_lbOilPRessure_value, -78 );
+lv_obj_set_y( ui_lbOilPRessure_value, -154 );
+lv_obj_set_align( ui_lbOilPRessure_value, LV_ALIGN_RIGHT_MID );
+lv_label_set_text(ui_lbOilPRessure_value,"21.5");
+lv_obj_set_style_text_align(ui_lbOilPRessure_value, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_decor(ui_lbOilPRessure_value, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_lbOilPRessure_value, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label6 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label6, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label6, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label6, 333 );
-lv_obj_set_y( ui_Screen1_Label6, -172 );
-lv_obj_set_align( ui_Screen1_Label6, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label6,"o");
-lv_obj_set_style_text_align(ui_Screen1_Label6, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label6, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelpsiUnits = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelpsiUnits, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelpsiUnits, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelpsiUnits, 334 );
+lv_obj_set_y( ui_Screen1_LabelpsiUnits, -140 );
+lv_obj_set_align( ui_Screen1_LabelpsiUnits, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelpsiUnits,"psi");
+lv_obj_set_style_text_align(ui_Screen1_LabelpsiUnits, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelpsiUnits, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label7 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label7, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label7, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label7, 251 );
-lv_obj_set_y( ui_Screen1_Label7, -196 );
-lv_obj_set_align( ui_Screen1_Label7, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label7,"Water Temperature");
-lv_obj_set_style_text_color(ui_Screen1_Label7, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label7, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label7, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelOilPressure = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelOilPressure, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelOilPressure, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelOilPressure, 280 );
+lv_obj_set_y( ui_Screen1_LabelOilPressure, -196 );
+lv_obj_set_align( ui_Screen1_LabelOilPressure, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelOilPressure,"Oil Pressure");
+lv_obj_set_style_text_color(ui_Screen1_LabelOilPressure, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_Screen1_LabelOilPressure, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelOilPressure, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 //FUEL FLOW DATA LABEL
 ui_lbFuelFlow = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_lbFuelFlow, LV_SIZE_CONTENT);  /// 1
 lv_obj_set_height( ui_lbFuelFlow, LV_SIZE_CONTENT);   /// 1
 lv_obj_set_x( ui_lbFuelFlow, -235 );
-lv_obj_set_y( ui_lbFuelFlow, 195 );
+lv_obj_set_y( ui_lbFuelFlow, 198 );
 lv_obj_set_align( ui_lbFuelFlow, LV_ALIGN_RIGHT_MID );
 lv_label_set_text(ui_lbFuelFlow,"8.8");
 lv_obj_set_style_text_align(ui_lbFuelFlow, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
@@ -83,27 +83,27 @@ lv_obj_set_style_text_decor(ui_lbFuelFlow, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_
 lv_obj_set_style_text_font(ui_lbFuelFlow, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 //FUEL BURN DATA LABEL
-ui_lbFuelBurned = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_lbFuelBurned, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_lbFuelBurned, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_lbFuelBurned, -74 );
-lv_obj_set_y( ui_lbFuelBurned, 198 );
-lv_obj_set_align( ui_lbFuelBurned, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_lbFuelBurned,"12.8");
-lv_obj_set_style_text_align(ui_lbFuelBurned, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_decor(ui_lbFuelBurned, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_lbFuelBurned, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_lbFuelBurned_Value = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_lbFuelBurned_Value, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_lbFuelBurned_Value, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_lbFuelBurned_Value, -74 );
+lv_obj_set_y( ui_lbFuelBurned_Value, 198 );
+lv_obj_set_align( ui_lbFuelBurned_Value, LV_ALIGN_RIGHT_MID );
+lv_label_set_text(ui_lbFuelBurned_Value,"12.8");
+lv_obj_set_style_text_align(ui_lbFuelBurned_Value, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_decor(ui_lbFuelBurned_Value, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_lbFuelBurned_Value, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label8 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label8, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label8, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label8, 141 );
-lv_obj_set_y( ui_Screen1_Label8, 152 );
-lv_obj_set_align( ui_Screen1_Label8, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label8,"Fuel Flow");
-lv_obj_set_style_text_color(ui_Screen1_Label8, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label8, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label8, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelFuelFlow = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelFuelFlow, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelFuelFlow, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelFuelFlow, 141 );
+lv_obj_set_y( ui_Screen1_LabelFuelFlow, 152 );
+lv_obj_set_align( ui_Screen1_LabelFuelFlow, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelFuelFlow,"Fuel Flow");
+lv_obj_set_style_text_color(ui_Screen1_LabelFuelFlow, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_Screen1_LabelFuelFlow, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelFuelFlow, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_Screen1_Label9 = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_Screen1_Label9, LV_SIZE_CONTENT);  /// 1
@@ -116,37 +116,37 @@ lv_obj_set_style_text_color(ui_Screen1_Label9, lv_color_hex(0x000000), LV_PART_M
 lv_obj_set_style_text_opa(ui_Screen1_Label9, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_Label9, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label10 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label10, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label10, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label10, 199 );
-lv_obj_set_y( ui_Screen1_Label10, 207 );
-lv_obj_set_align( ui_Screen1_Label10, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label10,"GPH");
-lv_obj_set_style_text_align(ui_Screen1_Label10, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label10, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelGPH = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelGPH, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelGPH, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelGPH, 199 );
+lv_obj_set_y( ui_Screen1_LabelGPH, 207 );
+lv_obj_set_align( ui_Screen1_LabelGPH, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelGPH,"GPH");
+lv_obj_set_style_text_align(ui_Screen1_LabelGPH, LV_TEXT_ALIGN_LEFT, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelGPH, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label11 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label11, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label11, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label11, 365 );
-lv_obj_set_y( ui_Screen1_Label11, 207 );
-lv_obj_set_align( ui_Screen1_Label11, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label11,"Gallons");
-lv_obj_set_style_text_color(ui_Screen1_Label11, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label11, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label11, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelGallons = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelGallons, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelGallons, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelGallons, 365 );
+lv_obj_set_y( ui_Screen1_LabelGallons, 207 );
+lv_obj_set_align( ui_Screen1_LabelGallons, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelGallons,"Gallons");
+lv_obj_set_style_text_color(ui_Screen1_LabelGallons, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_Screen1_LabelGallons, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelGallons, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_lbEngineRPM = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_lbEngineRPM, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_lbEngineRPM, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_lbEngineRPM, -103 );
-lv_obj_set_y( ui_lbEngineRPM, 83 );
-lv_obj_set_align( ui_lbEngineRPM, LV_ALIGN_RIGHT_MID );
-lv_label_set_text(ui_lbEngineRPM,"12356");
-lv_obj_set_style_text_align(ui_lbEngineRPM, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_decor(ui_lbEngineRPM, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_lbEngineRPM, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_lbEngineRPM_value = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_lbEngineRPM_value, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_lbEngineRPM_value, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_lbEngineRPM_value, -103 );
+lv_obj_set_y( ui_lbEngineRPM_value, 83 );
+lv_obj_set_align( ui_lbEngineRPM_value, LV_ALIGN_RIGHT_MID );
+lv_label_set_text(ui_lbEngineRPM_value,"12356");
+lv_obj_set_style_text_align(ui_lbEngineRPM_value, LV_TEXT_ALIGN_RIGHT, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_decor(ui_lbEngineRPM_value, LV_TEXT_DECOR_NONE, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_lbEngineRPM_value, &lv_font_montserrat_48, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 ui_lbAltVolt = lv_label_create(ui_Screen1);
 lv_obj_set_width( ui_lbAltVolt, LV_SIZE_CONTENT);  /// 1
@@ -192,16 +192,16 @@ lv_obj_set_style_text_color(ui_Screen1_LabelVoltage, lv_color_hex(0x000000), LV_
 lv_obj_set_style_text_opa(ui_Screen1_LabelVoltage, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
 lv_obj_set_style_text_font(ui_Screen1_LabelVoltage, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
-ui_Screen1_Label15 = lv_label_create(ui_Screen1);
-lv_obj_set_width( ui_Screen1_Label15, LV_SIZE_CONTENT);  /// 1
-lv_obj_set_height( ui_Screen1_Label15, LV_SIZE_CONTENT);   /// 1
-lv_obj_set_x( ui_Screen1_Label15, 280 );
-lv_obj_set_y( ui_Screen1_Label15, 43 );
-lv_obj_set_align( ui_Screen1_Label15, LV_ALIGN_CENTER );
-lv_label_set_text(ui_Screen1_Label15,"Engine Speed");
-lv_obj_set_style_text_color(ui_Screen1_Label15, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
-lv_obj_set_style_text_opa(ui_Screen1_Label15, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
-lv_obj_set_style_text_font(ui_Screen1_Label15, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
+ui_Screen1_LabelEngineSpeed = lv_label_create(ui_Screen1);
+lv_obj_set_width( ui_Screen1_LabelEngineSpeed, LV_SIZE_CONTENT);  /// 1
+lv_obj_set_height( ui_Screen1_LabelEngineSpeed, LV_SIZE_CONTENT);   /// 1
+lv_obj_set_x( ui_Screen1_LabelEngineSpeed, 280 );
+lv_obj_set_y( ui_Screen1_LabelEngineSpeed, 43 );
+lv_obj_set_align( ui_Screen1_LabelEngineSpeed, LV_ALIGN_CENTER );
+lv_label_set_text(ui_Screen1_LabelEngineSpeed,"Engine Speed");
+lv_obj_set_style_text_color(ui_Screen1_LabelEngineSpeed, lv_color_hex(0x000000), LV_PART_MAIN | LV_STATE_DEFAULT );
+lv_obj_set_style_text_opa(ui_Screen1_LabelEngineSpeed, 255, LV_PART_MAIN| LV_STATE_DEFAULT);
+lv_obj_set_style_text_font(ui_Screen1_LabelEngineSpeed, &lv_font_montserrat_18, LV_PART_MAIN| LV_STATE_DEFAULT);
 
 
 }
